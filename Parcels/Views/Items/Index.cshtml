@@ -1,0 +1,23 @@
+@using ToDoList.Models;
+
+<h1>To Do List</h1>
+
+@if (Model.Count == 0)
+{
+  <p>There are no items in the list.</p>
+}
+<ul>
+  @foreach (Item item in Model)
+  {
+    <li>@item.Description</li>
+    <p>Length @item.Length</p>
+    <p>Width @item.Width</p>
+    <p>Height @item.Height</p>   
+    <p>Weight @item.Weight</p>
+    <p>Price @item.Price</p>
+    <p>Total @item.PriceReturn(item.Length, item.Width, item.Height, item.Weight, item.Price)</p>
+    
+
+  }
+</ul>
+<a href="/items/new">Add a new item.</a>
